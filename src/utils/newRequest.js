@@ -1,7 +1,8 @@
 import axios from "axios";
 
+const url = 'https://noco-skills-backend.adaptable.app/api/'
 const newRequest = axios.create({
-  baseURL: "http://localhost:8000/api/",
+  baseURL: url,
   withCredentials: true,
 });
 
