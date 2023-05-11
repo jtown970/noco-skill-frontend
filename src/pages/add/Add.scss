@@ -1,0 +1,160 @@
+.add {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    max-width: 1200px;
+    padding: 50px;
+    margin: 0 auto;
+
+    h1 {
+      margin-bottom: 30px;
+      color: gray;
+      font-weight: 300;
+    }
+
+    .sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 50px;
+
+      .email {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+      }
+      .question-icon {
+        margin: 3%;
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-image: url('https://res.cloudinary.com/dk2a01h3i/image/upload/v1683152629/question3_fkhzxl.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          transition: transform 0.2s ease-in-out;
+        }
+      
+        &::after {
+          content: "Your google email is needed for buyer to send calendar events when booking your service.";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: none;
+          background-color: white;
+          border: 1px solid black;
+          padding: 10px;
+          width: 300px;
+        }
+      
+        &:hover::after {
+          display: block;
+        }
+      }
+      .question-icon-2 {
+        margin: 3%;
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-image: url('https://res.cloudinary.com/dk2a01h3i/image/upload/v1683152629/question3_fkhzxl.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          transition: transform 0.2s ease-in-out;
+        }
+      
+        &::after {
+          content: "Sign into your google account to send an calendar event";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: none;
+          background-color: white;
+          border: 1px solid black;
+          padding: 10px;
+          width: 300px;
+        }
+      
+        &:hover::after {
+          display: block;
+        }
+      }
+
+      .info,
+      .details {
+        flex: 1 1 45%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        label {
+          color: gray;
+          font-size: 18px;
+        }
+
+        input,
+        select,
+        textarea {
+          padding: 15px;
+          border: none;
+          border-bottom: 2px solid #ddd;
+          font-size: 16px;
+          font-family: inherit;
+          color: #555;
+          background-color: #f7f7f7;
+        }
+
+        button {
+          border: none;
+          padding: 15px 30px;
+          color: white;
+          font-weight: 500;
+          font-size: 18px;
+          background-color: #1dbf73;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: darken(#1dbf73, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 30px;
+    }
+
+    .sections {
+      justify-content: center;
+      gap: 30px;
+
+      .info,
+      .details {
+        flex: 1 1 100%;
+      }
+    }
+  }
+  .inputs-color::placeholder {
+    color:rgb(168, 168, 168) /* Set the desired color for the placeholder text */
+  }
+}

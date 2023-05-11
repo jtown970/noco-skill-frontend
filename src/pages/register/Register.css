@@ -1,0 +1,119 @@
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register .error {
+  color: #d9534f;
+}
+.register .password-strength meter {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+}
+.register .password-strength .strength-0 {
+  background-color: #d9534f; /* Weak */
+}
+.register .password-strength .strength-1 {
+  background-color: #f0ad4e; /* Fair */
+}
+.register .password-strength .strength-2 {
+  background-color: #ffc107; /* Good */
+}
+.register .password-strength .strength-3 {
+  background-color: #5cb85c; /* Strong */
+}
+.register .password-strength .strength-4 {
+  background-color: #5cb85c; /* Very Strong */
+}
+.register form {
+  width: 100%;
+  max-width: 960px;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+.register form h1 {
+  color: gray;
+  margin-bottom: 20px;
+  flex-basis: 100%;
+  text-align: center;
+}
+.register form .left,
+.register form .right {
+  flex-basis: 100%;
+  max-width: 400px;
+}
+.register form label {
+  color: gray;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+.register form input,
+.register form textarea {
+  padding: 20px;
+  border: 1px solid rgb(216, 214, 214);
+  width: 100%;
+  margin-bottom: 15px;
+}
+.register form button {
+  border: none;
+  padding: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: #1dbf73;
+  cursor: pointer;
+  width: 100%;
+}
+.register form .toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Hide default HTML checkbox */
+}
+.register form .toggle .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.register form .toggle .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.register form .toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.register form .toggle .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.register form .toggle input:checked + .slider {
+  background-color: #2196f3;
+}
+.register form .toggle input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+.register form .toggle input:checked + .slider:before {
+  transform: translateX(26px);
+}/*# sourceMappingURL=Register.css.map */

@@ -1,0 +1,6 @@
+.inputs-color::-moz-placeholder {
+  color: rgb(168, 168, 168);
+}
+.inputs-color::placeholder {
+  color: rgb(168, 168, 168);
+}/*# sourceMappingURL=BusinessHours.css.map */

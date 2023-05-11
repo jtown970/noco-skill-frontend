@@ -1,0 +1,67 @@
+.all .pop {
+  color: black;
+  margin: 5vh 0vw -9vh 5vw;
+}
+.all .slide {
+  display: flex;
+  justify-content: center;
+  padding: 10vw 0;
+}
+.all .slide .container {
+  width: 90%;
+  max-width: 1400px;
+  position: relative;
+}
+.all .slide .carousel-initialized {
+  position: static;
+}
+.all .slide .carousel-prev,
+.all .slide .carousel-next {
+  width: 2vw;
+  height: 2vw;
+  background-color: rgb(243, 243, 243);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.all .slide .carousel-prev {
+  left: 0;
+  margin-left: -4vw;
+}
+.all .slide .carousel-next {
+  right: 0;
+  margin-right: -4vw;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  padding: 10vw 0;
+}
+.slide .container {
+  width: 90%;
+  max-width: 1400px;
+  position: relative;
+}
+.slide .carousel-initialized {
+  position: static;
+}
+.slide .carousel-prev,
+.slide .carousel-next {
+  width: 2vw;
+  height: 2vw;
+  background-color: rgb(243, 243, 243);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slide .carousel-prev {
+  left: 0;
+  margin-left: -4vw;
+}
+.slide .carousel-next {
+  right: 0;
+  margin-right: -4vw;
+}/*# sourceMappingURL=Slide.css.map */

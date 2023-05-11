@@ -1,0 +1,83 @@
+.slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.less-strong {
+  font-weight: 600;
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slider img {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.text {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 5vw;
+  cursor: pointer;
+  color: #1dbf73;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.disc-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+  .slideshow {
+    flex-direction: column; /* Change the direction to column */
+    text-align: center; /* Center the text within the column */
+  }
+  .slider {
+    width: 100%; /* Set the width to 100% */
+    max-width: none; /* Remove the max-width */
+  }
+  .text {
+    width: 100%; /* Set the width to 100% */
+    max-width: none; /* Remove the max-width */
+    margin-top: 20px; /* Add some spacing between the slider and text */
+  }
+  .prev,
+  .next {
+    position: static; /* Reset the position to static for buttons to appear below the slider */
+    margin-top: 20px; /* Add some spacing between the slider and buttons */
+    font-size: 6vw; /* Adjust the font size for smaller screens */
+    padding: 0 10vw;
+  }
+}/*# sourceMappingURL=Slideshow.css.map */

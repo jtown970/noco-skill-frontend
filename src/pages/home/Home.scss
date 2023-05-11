@@ -1,0 +1,74 @@
+.about-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+  
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .about-left {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 2rem;
+    border-radius: 8px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .faq-dropdown {
+      margin-top: 2rem;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .faq-content {
+        .faq {
+          margin-bottom: 1rem;
+
+          h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .about-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+      max-width: 100%;
+      height: auto;
+      border-radius: 5%;
+    }
+  }
+}
