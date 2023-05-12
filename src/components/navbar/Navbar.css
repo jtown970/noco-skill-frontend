@@ -92,6 +92,12 @@
   background-color: #1dbf73;
   border-color: #1dbf73;
 }
+@media (max-width: 767px) {
+  .navbar .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .navbar hr {
   width: calc(100% - 2px);
   height: 0;
@@ -106,4 +112,9 @@
   color: gray;
   font-weight: 300;
   font-family: "Montserrat", sans-serif;
+}
+@media (min-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+  }
 }/*# sourceMappingURL=Navbar.css.map */
