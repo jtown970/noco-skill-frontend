@@ -56,6 +56,7 @@ function MyGigs() {
                 <th>Price</th>
                 <th>Sales</th>
                 <th>Action</th>
+                <th>Edit</th>
               </tr>
             </thead>
             <tbody>
@@ -74,6 +75,15 @@ function MyGigs() {
                       alt=""
                       onClick={() => handleDelete(gig._id)}
                     />
+                  </td>
+                  <td>
+                    <Link to={`/editGig?gigId=${gig._id}`}>
+                      <img
+                        className="edit"
+                        src="https://res.cloudinary.com/dk2a01h3i/image/upload/v1684081981/edit_ne5ylz.png"
+                        alt=""
+                      />
+                    </Link>
                   </td>
                 </tr>
               ))}

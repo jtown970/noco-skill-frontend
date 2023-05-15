@@ -41,6 +41,10 @@
   width: 20px;
   cursor: pointer;
 }
+.myGigs .container table tr td .edit {
+  width: 20px;
+  cursor: pointer;
+}
 .myGigs .container table tr:nth-child(even) {
   background-color: rgba(29, 191, 115, 0.0588235294);
 }/*# sourceMappingURL=MyGigs.css.map */
