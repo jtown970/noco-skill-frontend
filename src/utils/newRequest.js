@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'https://nocoskills.com/api/'
+const url = 'https://api.nocoskills.com/api/'
 const newRequest = axios.create({
   baseURL: url,
   withCredentials: true,
