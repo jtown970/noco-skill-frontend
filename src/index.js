@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createClient } from '@supabase/supabase-js';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
+// import { HashRouter } form 'react-router-dom';
 
 const supabase = createClient(
   "https://kqayqyagbhifabtgdoob.supabase.co",
