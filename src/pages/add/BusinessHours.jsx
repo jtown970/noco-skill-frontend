@@ -7,7 +7,7 @@ const BusinessHours = ({ businessHours, setBusinessHours }) => {
     updatedBusinessHours[index].hours = hours;
     setBusinessHours(updatedBusinessHours);
   };
-  console.log(businessHours);
+  // console.log(businessHours);
 
   return (
     <div>
