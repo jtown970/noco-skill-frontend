@@ -132,10 +132,12 @@
 }
 @media (max-width: 768px) {
   .add .add {
-    max-width: 90vw;
+    max-width: 100vw;
   }
   .add .container {
-    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
     width: 90vw;
   }
   .add .sections {

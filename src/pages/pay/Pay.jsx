@@ -61,13 +61,15 @@ const Pay = ({ dataUsername, appointment }) => {
 
   return (
     <div className="pay">
-      <div>Total Price: {totalPrice}</div>
+      <h4>Payments handled by</h4>
+      <img src="https://res.cloudinary.com/dk2a01h3i/image/upload/v1684266292/stripelogo_pid8uw.png" alt="stripe payments" />
       <br/>
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <CheckoutForm />
         </Elements>
       )}
+      <h4>Total Price: ${totalPrice}</h4>
     </div>
   );
 };
