@@ -98,7 +98,7 @@ function Register() {
             onChange={handleChange}
           />
           <label htmlFor="">Password</label>
-          <input name="password" type="password" onChange={handleChange} />
+          <input placeholder="password" name="password" type="password" onChange={handleChange} />
           <div className="password-strength">
             {/* <label>Password Strength</label> */}
             <meter
@@ -109,6 +109,7 @@ function Register() {
           </div>
           <label htmlFor="">Confirm Password</label>
           <input
+            placeholder="confirm password"
             name="confirmPassword"
             type="password"
             onChange={handleChange}
@@ -145,7 +146,7 @@ function Register() {
           <input
             name="phone"
             type="text"
-            placeholder="e.g 234 567 89"
+            placeholder="e.g (234) 567 831"
             onChange={handleChange}
           />
           {phoneNumberError && (

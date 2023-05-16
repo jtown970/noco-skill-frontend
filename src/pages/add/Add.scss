@@ -140,8 +140,12 @@
   }
 
   @media (max-width: 768px) {
+    .add {
+      max-width: 90vw;
+    }
     .container {
       padding: 30px;
+      width: 90vw;
     }
 
     .sections {

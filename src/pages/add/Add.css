@@ -131,8 +131,12 @@
   background-color: #169358;
 }
 @media (max-width: 768px) {
+  .add .add {
+    max-width: 90vw;
+  }
   .add .container {
     padding: 30px;
+    width: 90vw;
   }
   .add .sections {
     justify-content: center;

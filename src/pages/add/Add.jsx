@@ -154,11 +154,13 @@ const Add = () => {
             <label htmlFor="">Category</label>
             <select name="cat" id="cat" onChange={handleChange}>
               <option value="">none</option>
+              <option value="art">Art</option>
               <option value="tech">Health</option>
               <option value="music">Music</option>
               <option value="outdoor">Outdoor</option>
               <option value="sports">Sports</option>
               <option value="tech">Tech</option>
+              <option value="other">Other</option>
             </select>
             <div className="images">
               <div className="imagesInputs">
@@ -191,15 +193,15 @@ const Add = () => {
             ></textarea>
           </div>
           <div className="details">
-            <label htmlFor="">Service Title</label>
+            {/* <label htmlFor="">Service Title</label>
             <input
               className="inputs-color"
               type="text"
               name="shortTitle"
               placeholder="e.g. One-page web design"
               onChange={handleChange}
-            />
-            <label htmlFor="">Short Description</label>
+            /> */}
+            {/* <label htmlFor="">Short Description</label>
             <textarea
               className="inputs-color"
               name="shortDesc"
@@ -208,7 +210,7 @@ const Add = () => {
               placeholder="Short description of your service"
               cols="30"
               rows="10"
-            ></textarea>
+            ></textarea> */}
             <form onSubmit={handleSubmit}>
               <BusinessHours
                 businessHours={businessHours}
