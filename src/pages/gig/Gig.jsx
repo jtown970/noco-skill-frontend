@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Gig.scss";
 import { Slider } from "infinite-react-carousel/lib";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import Reviews from "../../components/reviews/Reviews";
@@ -24,6 +24,7 @@ function Gig() {
   const [dataUserUsername, setDataUserUsername] = useState(null);
   const [dataUserEmail, setDataUserEmail] = useState(null);
   const [perHours, setPerHours] = useState(1);
+  const navigate = useNavigate();
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
@@ -35,7 +36,7 @@ function Gig() {
     .then((res) => res.data),
   });
   const totalPrice = Math.ceil(data?.price * perHours * 1.15 * 1.029* 100) / 100;
-  console.log('total price', totalPrice);
+  // console.log('total price', totalPrice);
 
   useEffect(() => {
     if (data) {
@@ -74,12 +75,19 @@ function Gig() {
       // add any other relevant properties to the order object here
     };
 
-    console.log("appointment:", appointment);
+    // console.log("appointment:", appointment);
     // pass the order object to the next step in the ordering process here
     return <Pay appointment={appointment} />;
   };
 
-console.log(Math.floor(123 * 1.15 * 1.029));
+  const checkUser = () => {
+    if (currentUser === null){
+      alert('You are not logged in')
+      navigate('/login')
+    }
+  }
+
+// console.log(Math.floor(123 * 1.15 * 1.029));
 
   return (
     <div className="gig">
@@ -128,7 +136,7 @@ console.log(Math.floor(123 * 1.15 * 1.029));
             )}
             <Slider slidesToShow={1} arrowsScroll={1} className="slider">
               {data.images.map((img) => {
-                console.log(img);
+                // console.log(img);
                 return <img key={img} src={img} alt="" />;
               })}
             </Slider>
@@ -201,8 +209,9 @@ console.log(Math.floor(123 * 1.15 * 1.029));
             <Reviews gigId={id} />
           </div>
           <div className="right">
-            <h3>{data.shortTitle}</h3>
-            <div className="box">
+            <h1>Check Out</h1>
+            {/* <h3>{data.shortTitle}</h3> */}
+            {/* <div className="box">
               <div className="items">
                 <div className="item">
                   <span className="title">Price per Hour: </span>
@@ -231,8 +240,8 @@ console.log(Math.floor(123 * 1.15 * 1.029));
                 ${Math.ceil(data.price * perHours * 1.15 * 1.029 * 100) / 100}
                 </span>
               </div>
-            </div>
-            <p>{data.shortDesc}</p>
+            </div> */}
+            {/* <p>{data.shortDesc}</p> */}
             <div className="details"></div>
             <div className="features">
               {data.features.map((feature) => (
@@ -246,7 +255,10 @@ console.log(Math.floor(123 * 1.15 * 1.029));
               ))}
             </div>
             <div className="business-hours">
-              <h2>Business Hours</h2>
+              <div className="business-hours-header">
+                <h2>Business Hours</h2>
+                <div className="question-icon3" alt="Question" />
+              </div>
               <ul>
                 {businessHours.map((hour) => (
                   <li key={hour._id}>
@@ -255,13 +267,46 @@ console.log(Math.floor(123 * 1.15 * 1.029));
                 ))}
               </ul>
             </div>
-            <Supa
+            <div className="box">
+              <div className="items">
+                <div className="item">
+                  <span className="title">Price per Hour: </span>
+                  <span className="desc">${data.price.toFixed(2)}</span>
+                  <p>Select hours to book</p>
+                </div>
+                <input
+                  type="range"
+                  min={1}
+                  max={8}
+                  value={perHours}
+                  onChange={(e) => setPerHours(parseInt(e.target.value))}
+                />
+                <span>{perHours} hour(s)</span>
+                <div className="item">
+                <span className="title">Service Fee</span>
+                  <span className="desc">${(data.price * perHours * 0.15).toFixed(2)}</span>
+                </div>
+                <div className="item">
+                  <span className="title">Tax</span>
+                  <span className="desc">${(data.price * perHours * 0.029).toFixed(2)}</span>
+                </div>
+              </div>
+              <div className="total">
+                <span className="title">Total Price</span>
+                <span className="desc">
+                ${Math.ceil(data.price * perHours * 1.15 * 1.029 * 100) / 100}
+                </span>
+              </div>
+            </div>
+            {/* <Supa
               dataUserEmail={dataUserEmail}
               dataUserUsername={dataUserUsername}
-            />
-            <Link to={`/pay/${id}?totalPrice=${totalPrice}`}>
-              <button>Continue</button>
-            </Link>
+            /> */}
+            <div onClick={checkUser}>
+              <Link to={`/pay/${id}?totalPrice=${totalPrice}`}>
+                <button>Continue</button>
+              </Link>
+            </div>
           </div>
         </div>
       )}

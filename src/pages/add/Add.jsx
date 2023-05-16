@@ -237,7 +237,6 @@ const Add = () => {
             <label htmlFor="">Hourly Rate</label>
             <input type="number" onChange={handleChange} name="price" />
             <button onClick={handleSubmit}>Create</button>
-
           </div>
         </div>
       </div>

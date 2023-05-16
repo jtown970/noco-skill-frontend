@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
@@ -9,6 +9,21 @@ function Navbar() {
   const { pathname } = useLocation();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const navigate = useNavigate();
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -31,7 +46,7 @@ function Navbar() {
 
   return (
     <div className={active ? "navbar active" : "navbar"}>
-      <div className="navbar">
+      <div className="navbar" ref={navRef}>
         <div className="container">
           <div className="logo">
             <Link to="/" className="link">
@@ -43,7 +58,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="links">
-          <Link
+            <Link
               className="links"
               to="/gigs?search="
               onClick={handleAllSkillsClick}

@@ -252,5 +252,22 @@
         cursor: pointer;
       }
     }
+    .business-hours {
+      .business-hours-header {
+        display: flex;
+        align-items: center;
+        
+        h2 {
+          margin-right: 10px;
+        }
+        
+        .question-icon {
+          width: 20px;
+          height: 20px;
+          /* Add your question mark icon styles here */
+        }
+      }
+    }
   }
+
 }

@@ -215,4 +215,16 @@
   border: none;
   font-size: 18px;
   cursor: pointer;
+}
+.gig .container .business-hours .business-hours-header {
+  display: flex;
+  align-items: center;
+}
+.gig .container .business-hours .business-hours-header h2 {
+  margin-right: 10px;
+}
+.gig .container .business-hours .business-hours-header .question-icon {
+  width: 20px;
+  height: 20px;
+  /* Add your question mark icon styles here */
 }/*# sourceMappingURL=Gig.css.map */

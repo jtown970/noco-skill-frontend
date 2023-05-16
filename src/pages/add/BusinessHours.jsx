@@ -11,7 +11,7 @@ const BusinessHours = ({ businessHours, setBusinessHours }) => {
 
   return (
     <div>
-      <h2>Business Hours</h2>
+      <h4>Business Hours</h4>
       {businessHours.map((businessHour, index) => (
         <div key={index}>
           <label>{businessHour.day}</label>

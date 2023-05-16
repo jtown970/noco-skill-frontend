@@ -107,7 +107,7 @@ function Gigs() {
                 ) : (
                   <span onClick={() => reSort("sales")}>Best Selling</span>
                   )}
-                  <span onClick={() => reSort("sales")}>Popular</span>
+                  {/* <span onClick={() => reSort("sales")}>Popular</span> */}
               </div>
             )}
           </div>
