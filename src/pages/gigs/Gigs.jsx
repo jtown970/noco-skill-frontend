@@ -11,7 +11,7 @@ function Gigs() {
   const minRef = useRef();
   const maxRef = useRef();
   const [searchQuery, setSearchQuery] = useState("");
-
+  const [showNoTeachers, setShowNoTeachers] = useState(false); // New state to track the "No teachers found" message
   const { search } = useLocation();
 
   const { isLoading, error, data, refetch } = useQuery({
@@ -60,7 +60,17 @@ function Gigs() {
     }
   }, [searchQuery]);
   
-
+  useEffect(() => {
+    if (data?.length === 0) {
+      setShowNoTeachers(true);
+      const timer = setTimeout(() => {
+        setShowNoTeachers(false);
+        navigate(`/gigs?search=`);
+        window.location.reload();
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [data, navigate]);
 
   return (
     <div className="gigs">
@@ -113,11 +123,21 @@ function Gigs() {
           </div>
         </div>
         <div className="cards">
-          {isLoading
-            ? "loading"
-            : error
-            ? "Something went wrong!"
-            : data.map((gig) => <GigCard key={gig._id} item={gig} />)}
+          {isLoading ? (
+            "loading"
+          ) : error ? (
+            "Something went wrong!"
+          ) : (data ?? []).length === 0 ? (
+            <div>
+              {showNoTeachers && (
+                <div className="noTeachers">
+                 <h2>Sorry, no teachers found - Redirecting...</h2>
+                </div>
+              )}
+            </div>
+          ) : (
+            data.map((gig) => <GigCard key={gig._id} item={gig} />)
+          )}
         </div>
       </div>
     </div>

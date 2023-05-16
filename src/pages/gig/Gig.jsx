@@ -26,6 +26,12 @@ function Gig() {
   const [perHours, setPerHours] = useState(1);
   const navigate = useNavigate();
 
+  const dateStr = dataUser?.createdAt;
+  const dateCon = new Date(dateStr);
+  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = dateCon.toLocaleDateString(undefined, dateOptions);
+  console.log(formattedDate); 
+
   const { isLoading, error, data } = useQuery({
     queryKey: ["gig"],
     queryFn: () =>
@@ -165,8 +171,8 @@ function Gig() {
                           .fill()
                           .map((item, i) => (
                             <img
-                              src="/img/star.png"
-                              alt=""
+                              src="https://res.cloudinary.com/dk2a01h3i/image/upload/v1683309745/goldStar_jvta9f.png"
+                              alt="star"
                               key={i}
                             />
                           ))}
@@ -175,7 +181,7 @@ function Gig() {
                         </span>
                       </div>
                     )}
-                    <button>Contact Me</button>
+                    {/* <button>Contact Me</button> */}
                   </div>
                 </div>
                 <div className="box">
@@ -186,7 +192,7 @@ function Gig() {
                     </div>
                     <div className="item">
                       <span className="title">Member since</span>
-                      <span className="desc">Aug 2022</span>
+                      <span className="desc">{formattedDate}</span>
                     </div>
                     <div className="item">
                       <span className="title">Avg. response time</span>
