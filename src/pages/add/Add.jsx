@@ -83,14 +83,22 @@ const Add = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    // Check if any business hours are empty and set them to "Closed"
+    const updatedBusinessHours = businessHours.map((businessHour) => {
+      if (businessHour.hours === '') {
+        return { ...businessHour, hours: 'Closed' };
+      }
+      return businessHour;
+    });
+  
     const gigData = {
       ...state,
-      businessHours: businessHours,
+      businessHours: updatedBusinessHours,
       userId: currentUser,
     };
-    console.log('gigData',gigData);
-
+    console.log('gigData', gigData);
+  
     try {
       await mutation.mutateAsync(gigData);
       queryClient.invalidateQueries(["myGigs"]);
@@ -99,6 +107,7 @@ const Add = () => {
       console.log(error);
     }
   };
+  
 
   const isGmail = (email) => {
     return email && email.includes('gmail.com');
@@ -193,24 +202,6 @@ const Add = () => {
             ></textarea>
           </div>
           <div className="details">
-            {/* <label htmlFor="">Service Title</label>
-            <input
-              className="inputs-color"
-              type="text"
-              name="shortTitle"
-              placeholder="e.g. One-page web design"
-              onChange={handleChange}
-            /> */}
-            {/* <label htmlFor="">Short Description</label>
-            <textarea
-              className="inputs-color"
-              name="shortDesc"
-              onChange={handleChange}
-              id=""
-              placeholder="Short description of your service"
-              cols="30"
-              rows="10"
-            ></textarea> */}
             <form onSubmit={handleSubmit}>
               <BusinessHours
                 businessHours={businessHours}
